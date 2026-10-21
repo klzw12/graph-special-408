@@ -1,0 +1,282 @@
+/* ============================================
+   知识图谱 3D — 通用页面样式
+   所有详情页共用，减少重复 CSS
+   ============================================ */
+
+/* ---- 基础重置 ---- */
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body {
+  width:100%; min-height:100vh;
+  background:#080818;
+  color:rgba(255,255,255,.85);
+  font:400 15px/1.7 'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+}
+a { color:inherit; text-decoration:none; }
+
+/* ---- 返回 ---- */
+.back-link {
+  position:fixed; top:16px; left:20px; z-index:100;
+  font-size:13px; color:rgba(255,255,255,.35); transition:all .2s;
+}
+.back-link:hover { color:rgba(255,255,255,.7); }
+
+/* ===== 整体容器 ===== */
+.page {
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 20px 0;
+}
+
+/* ===== title ===== */
+.title-area {
+  padding:0 0 20px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  margin-bottom:28px;
+}
+.title-area h1 {
+  font-size:28px; font-weight:700;
+  display:flex; align-items:baseline; gap:12px;
+}
+.title-area .en {
+  font-size:16px; font-weight:400; color:rgba(255,255,255,.35);
+}
+.title-area .bar {
+  width:40px; height:4px; border-radius:2px;
+  margin:10px 0 14px;
+}
+.title-area .brief {
+  font-size:14px; color:rgba(255,255,255,.5); max-width:640px;
+}
+
+/* ===== 参考来源 ===== */
+.paper-line {
+  margin-bottom:20px;
+  font-size:13px;
+}
+.paper-line a {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 14px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;
+  color:rgba(255,255,255,.5);
+  transition:all .2s;
+}
+.paper-line a:hover {
+  border-color:rgba(255,255,255,.2);
+  color:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.03);
+}
+
+/* ===== 三栏布局 ===== */
+.layout {
+  display:flex; gap:24px;
+  align-items:flex-start;
+}
+
+/* ---- 左侧导航 ---- */
+.nav-col {
+  flex:0 0 180px;
+  position:sticky; top:60px;
+}
+.nav-col .nav-title {
+  font-size:12px; font-weight:600; text-transform:uppercase;
+  color:rgba(255,255,255,.25); letter-spacing:1px;
+  margin-bottom:12px;
+}
+.nav-col a {
+  display:block;
+  font-size:13px; line-height:2;
+  color:rgba(255,255,255,.35);
+  transition:color .15s;
+}
+.nav-col a:hover { color:rgba(255,255,255,.7); }
+
+/* ---- 中间正文 ---- */
+.main-col {
+  flex:1; min-width:0;
+}
+.main-col section {
+  margin-bottom:28px;
+}
+.main-col section h2 {
+  font-size:17px; font-weight:600;
+  margin-bottom:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.main-col section h3 {
+  font-size:14px; font-weight:600;
+  margin:16px 0 8px;
+  color:rgba(255,255,255,.7);
+}
+.main-col section p {
+  font-size:14px; line-height:1.9;
+  color:rgba(255,255,255,.55);
+  margin-bottom:8px;
+}
+.main-col section p:last-child { margin-bottom:0; }
+.main-col section p strong {
+  color:rgba(255,255,255,.75);
+}
+.main-col section ol {
+  padding-left:20px;
+  font-size:14px; line-height:2.2;
+  color:rgba(255,255,255,.55);
+}
+
+/* 表格 */
+.main-col .table-wrap {
+  overflow-x:auto;
+  margin:10px 0;
+}
+.main-col table {
+  width:100%; border-collapse:collapse;
+  font-size:13px;
+}
+.main-col table th {
+  background:rgba(255,255,255,.04);
+  color:rgba(255,255,255,.5);
+  font-weight:600; text-align:left;
+  padding:8px 12px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.main-col table td {
+  padding:7px 12px;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  color:rgba(255,255,255,.55);
+}
+.main-col table td:first-child {
+  font-weight:500; color:rgba(255,255,255,.65);
+}
+.main-col table tr:hover td {
+  background:rgba(255,255,255,.02);
+}
+.main-col table .formula-inline {
+  font-family:'Courier New',monospace;
+  font-size:13px;
+  color:#e5734a;
+}
+
+/* 公式 */
+.formula {
+  background:rgba(0,0,0,.25);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:10px 0;
+  overflow-x:auto;
+  text-align:center;
+}
+.formula .katex { color:rgba(255,255,255,.85); }
+
+/* 列表 */
+.main-col section ul {
+  list-style:none; padding:0;
+}
+.main-col section ul li {
+  font-size:14px; line-height:1.9;
+  color:rgba(255,255,255,.5);
+  padding-left:16px; position:relative;
+}
+.main-col section ul li::before {
+  content:'•'; position:absolute; left:2px;
+  color:rgba(255,255,255,.2);
+}
+
+/* 代码块 */
+.code-block {
+  background:rgba(0,0,0,.3);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:10px 0;
+  font:13px/1.8 'Cascadia Code','Fira Code','Consolas',monospace;
+  color:rgba(255,255,255,.7);
+  overflow-x:auto;
+}
+.code-block .comment { color:rgba(255,255,255,.25); font-style:italic; }
+
+/* 示例框 */
+.example-box {
+  background:rgba(255,136,102,.04);
+  border:1px solid rgba(255,136,102,.12);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:10px 0;
+}
+.example-box p {
+  font-size:13px;
+  color:rgba(255,255,255,.6);
+}
+.example-box .example-label {
+  font-size:11px; font-weight:600; text-transform:uppercase;
+  color:#ff8866; letter-spacing:1px;
+  margin-bottom:6px;
+}
+
+/* 注意框 */
+.main-col .note {
+  font-size:13px; color:rgba(255,255,255,.35);
+  margin-top:4px;
+}
+
+/* ---- 右侧着重 ---- */
+.aside-col {
+  flex:0 0 220px;
+  position:sticky; top:60px;
+}
+.aside-col .aside-title {
+  font-size:12px; font-weight:600; text-transform:uppercase;
+  color:rgba(255,255,255,.2); letter-spacing:1px;
+  margin-bottom:12px;
+}
+.aside-col .callout {
+  background:rgba(229,115,74,.06);
+  border-left:3px solid #e5734a;
+  border-radius:0 8px 8px 0;
+  padding:12px 14px;
+  margin-bottom:12px;
+  font-size:13px; line-height:1.7;
+  color:rgba(255,255,255,.55);
+}
+.aside-col .callout strong {
+  display:block; font-size:12px;
+  color:#e5734a; margin-bottom:4px;
+}
+.aside-col .callout.tip {
+  border-left-color:#4d96ff;
+}
+.aside-col .callout.tip strong { color:#4d96ff; }
+.aside-col .callout.warn {
+  border-left-color:#eab308;
+}
+.aside-col .callout.warn strong { color:#eab308; }
+
+/* ---- 演进树（结构） ---- */
+.evo-tree{display:flex;align-items:flex-start;gap:0;padding:16px 0}
+.evo-root{display:flex;align-items:center;justify-content:center;min-width:96px;height:42px;padding:0 18px;border-radius:8px;font-weight:600;font-size:14px;position:relative;flex-shrink:0;margin-top:4px}
+.evo-root::after{content:'';position:absolute;right:-16px;top:50%;width:16px;height:2px;background:rgba(255,255,255,.12)}
+.evo-branch{display:flex;flex-direction:column;gap:6px;position:relative;padding:0 0 0 20px;margin-left:4px;border-left:2px solid rgba(255,255,255,.12)}
+.evo-child{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;padding:7px 14px;border-radius:6px;font-size:13px;position:relative;margin-left:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.55)}
+.evo-child a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.evo-child a:hover{color:rgba(255,255,255,.85)}
+.evo-child::before{content:'';position:absolute;left:-18px;top:50%;width:16px;height:2px;background:rgba(255,255,255,.12)}
+.evo-child.star{background:rgba(255,200,50,.08);border-color:rgba(255,200,50,.2);color:rgba(255,255,255,.8)}
+.evo-child.star a{color:inherit}
+.evo-child.star a:hover{color:#fff}
+.evo-note{font-size:11px;font-style:italic;margin-left:4px}
+
+/* ===== 统一尾部 ===== */
+.footer {
+  margin-top:48px;
+  padding:20px 0 40px;
+  border-top:1px solid rgba(255,255,255,.04);
+  text-align:center;
+  font-size:12px; color:rgba(255,255,255,.15);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width:800px) {
+  .layout { flex-direction:column; }
+  .nav-col, .aside-col { flex:none; position:static; width:100%; }
+  .nav-col { display:flex; gap:12px; flex-wrap:wrap; }
+  .nav-col .nav-title { display:none; }
+  .nav-col a { font-size:12px; padding:4px 10px; background:rgba(255,255,255,.03); border-radius:6px; }
+}

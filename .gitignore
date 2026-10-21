@@ -1,0 +1,10 @@
+node_modules/
+dist/
+tmp/
+.vite.log
+.vite.err.log
+*.local
+.DS_Store
+Thumbs.db
+
+note.txt

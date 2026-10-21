@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>考研知识图谱 · 408 / 数学 / 政治</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="canvas-container"></div>
+
+    <!-- 顶栏：标题 + 搜索框 flex 一行 -->
+    <div id="top-bar">
+      <h1 id="logo">🕸️ Knowledge Graph</h1>
+    </div>
+
+    <!-- 加载提示 -->
+    <div id="layout-progress" style="position:absolute;bottom:50%;left:50%;transform:translate(-50%,50%);color:rgba(255,255,255,.4);font-size:14px;z-index:30;pointer-events:none;">布局计算中...</div>
+
+    <!-- 开始提示 -->
+    <div id="start-hint" style="position:absolute;bottom:50%;left:50%;transform:translate(-50%,50%);color:rgba(255,255,255,.2);font-size:13px;z-index:30;pointer-events:none;opacity:0;transition:opacity 1s;">
+      点击节点查看 · 右键复位全景
+    </div>
+
+    <!-- 信息面板 -->
+    <div id="info-panel" class="hidden">
+      <div id="info-panel-header">
+        <span id="info-panel-label"></span>
+        <button id="info-panel-close">✕</button>
+      </div>
+      <div id="info-panel-description"></div>
+      <div id="info-panel-content"></div>
+      <div id="info-panel-connections"></div>
+      <a id="info-panel-url" target="_blank" rel="noopener" class="hidden">🔗 打开链接 →</a>
+    </div>
+
+    <!-- 面包屑 -->
+    <div id="breadcrumb"></div>
+
+    <!-- 统计 -->
+    <div id="stats">
+      <span id="stats-nodes">0</span> 节点 · <span id="stats-edges">0</span> 关联
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

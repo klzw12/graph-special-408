@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>线性回归 — 知识图谱 3D</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});">
+  </script>
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    /* 页面专属颜色 — 在这里覆写 */
+    .title-area .bar { background:#ff8866; }
+    .aside-col .callout { border-left-color:#ff8866; }
+    .aside-col .callout strong { color:#ff8866; }
+    /* evo-root 主题色 */
+    .evo-root{background:rgba(255,136,102,.1);border:1px solid rgba(255,136,102,.25);color:rgba(255,255,255,.85)}
+    .evo-note{color:rgba(255,136,102,.6)}
+  </style>
+</head>
+<body>
+
+  <a class="back-link" href="/">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+
+    <!-- ===== title ===== -->
+    <div class="title-area">
+      <h1>
+        线性回归
+        <span class="en">Linear Regression</span>
+      </h1>
+      <div class="bar" style="background:#ff8866"></div>
+      <p class="brief">
+        通过拟合一条直线来描述自变量与因变量之间的线性关系，最基础的回归方法。
+      </p>
+    </div>
+
+    <!-- ===== 论文地址（如果有） ===== -->
+    <!-- 无论文时删除这个块 -->
+    <div class="paper-line" style="display:none">
+      <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">
+        📄 论文标题全称，Year
+      </a>
+    </div>
+
+    <!-- ===== 三栏：导航 | 正文 | 着重 ===== -->
+    <div class="layout">
+
+      <!-- 左侧导航 -->
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#definition">📖 定义</a>
+        <a href="#math">📐 数学原理</a>
+        <a href="#concepts">🔑 关键概念</a>
+        <a href="#related">🔗 关联方法</a>
+      </nav>
+
+      <!-- 中间正文 -->
+      <main class="main-col">
+
+        <section id="definition">
+          <h2>📖 定义</h2>
+          <p><!-- 完整定义 --></p>
+        </section>
+
+        <section id="math">
+          <h2>📐 数学原理</h2>
+          <h3>模型形式</h3>
+          <p>简单线性回归（单变量）：</p>
+          <div class="formula">$$y = wx + b$$</div>
+          <p>多元线性回归：</p>
+          <div class="formula">$$\hat{y} = \mathbf{w}^\mathsf{T}\mathbf{x} + b$$</div>
+          <h3>损失函数</h3>
+          <p>均方误差 (MSE)：</p>
+          <div class="formula">$$\mathcal{L}(\mathbf{w},b) = \frac{1}{n}\sum_{i=1}^{n}\bigl(y_i - (\mathbf{w}^\mathsf{T}\mathbf{x}_i + b)\bigr)^2$$</div>
+        </section>
+
+        <section id="concepts">
+          <h2>🔑 关键概念</h2>
+          <ul>
+            <li><!-- 概念 1 --></li>
+            <li><!-- 概念 2 --></li>
+          </ul>
+        </section>
+
+        <section id="related">
+          <h2>🔗 关联方法</h2>
+          <ul>
+            <li><!-- 关联 --></li>
+          </ul>
+        </section>
+
+      </main>
+
+      <!-- 右侧着重注意 -->
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+
+        <div class="callout">
+          <strong>💡 要点</strong>
+          <!-- 核心 insight、关键假设 -->
+        </div>
+
+        <div class="callout warn">
+          <strong>⚠️ 局限</strong>
+          <!-- 缺点、边界条件 -->
+        </div>
+
+        <div class="callout tip">
+          <strong>🔧 实践</strong>
+          <!-- 工程经验、调参技巧 -->
+        </div>
+
+      </aside>
+
+    </div>
+
+    <!-- ===== 统一尾部 ===== -->
+    <div class="footer">
+      知识图谱 3D · 算法底座 · 线性回归
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+      if(typeof renderMathInElement==='function')
+        renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>
