@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>行列式的性质与计算 — 考研知识图谱</title>
+  <link rel="stylesheet" href="../../../vendor/katex/katex.min.css" />
+  <script defer src="../../../vendor/katex/katex.min.js"></script>
+  <script defer src="../../../vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../css/common.css" />
+  <style>
+    .title-area .bar { background:#eab308; }
+    .aside-col .callout { border-left-color:#eab308; }
+    .aside-col .callout strong { color:#eab308; }
+    .video-wrap { margin: 18px 0 26px; border-radius: 10px; overflow: hidden;
+                  border: 1px solid rgba(255,255,255,.12); background:#000; }
+    .video-wrap video { display:block; width:100%; height:auto; }
+    .chain { display:grid; gap:10px; margin:12px 0 4px; }
+    .chain .step { border-left:3px solid rgba(255,255,255,.18); padding:6px 12px; }
+    .chain .step b { color:#eab308; }
+    .pager { display:flex; justify-content:space-between; margin:34px 0 10px; font-size:14px; }
+    .pager a { color:#9ad; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../../">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+    <div class="title-area">
+      <h1>行列式的性质与计算<span class="en">Properties & Computation</span></h1>
+      <div class="bar" style="background:#eab308"></div>
+      <p class="brief">定义是 n! 项，4 阶就 24 项，考场不可行——所以真正要掌握的是三条性质和两条计算路线。</p>
+    </div>
+
+    <div class="layout">
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#video">🎬 视频</a>
+        <a href="#chain">🔗 因果链</a>
+        <a href="#points">📌 要点</a>
+        <a href="#check">✅ 自检</a>
+      </nav>
+
+      <main class="main-col">
+        <section id="video">
+          <h2>🎬 本节视频（第 1 章 行列式）</h2>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline src="../../../videos/linalg/002_det-calc.mp4"></video>
+          </div>
+        </section>
+
+        <section id="chain">
+          <h2>🔗 因果链（为什么必须有它）</h2>
+          <div class="chain">
+            <div class="step"><b>问题</b>：按定义要算 $n!$ 项（4 阶 24 项、5 阶 120 项），手算不可行</div>
+            <div class="step"><b>方案</b>：三条运算性质（交换变号、提公因子、倍加不变）+ 按行列展开降阶 + 化上三角</div>
+            <div class="step"><b>新问题</b>：对高阶题化三角仍然慢，必须会「认形状」：行和相等、箭头型、三对角、范德蒙德</div>
+          </div>
+        </section>
+
+        <section id="points">
+          <h2>📌 要点</h2>
+          <ul>
+            <li>余子式 $M_{ij}$ 划去第 $i$ 行第 $j$ 列；代数余子式 $A_{ij}=(-1)^{i+j}M_{ij}$</li>
+            <li>展开定理 $|A|=\sum_j a_{ij}A_{ij}$；异乘变零 $\sum_k a_{jk}A_{ik}=0\ (i\ne j)$</li>
+            <li>化上三角：倍加把主对角下方清零，值 = 主对角之积</li>
+            <li>克拉默法则：$|A|\ne 0$ 时 $x_i=|A_i|/|A|$；$|A|=0$ 法则失效，改用秩判别</li>
+            <li>$|AB|=|A||B|$、$|kA|=k^n|A|$、$|A^{-1}|=1/|A|$、$|A^*|=|A|^{n-1}$</li>
+          </ul>
+        </section>
+
+        <section id="check">
+          <h2>✅ 自检三问（答不出就别往下走）</h2>
+          <ol>
+            <li>4 阶行列式为什么不能用对角线法则？违反了定义里的哪一条？</li>
+            <li>已知 $|A|=2$（3 阶），求 $|3A^*|$。</li>
+            <li>什么形状的题应该先「全加第一列」而不是直接化三角？</li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+        <div class="callout">
+          <strong>💡 一句话</strong>
+          定义是 n! 项，4 阶就 24 项，考场不可行——所以真正要掌握的是三条性质和两条计算路线。
+        </div>
+        <div class="callout warn">
+          <strong>⚠️ 易错</strong>
+          对高阶题化三角仍然慢，必须会「认形状」：行和相等、箭头型、三对角、范德蒙德
+        </div>
+      </aside>
+    </div>
+
+    <div class="pager">
+      <span><a href="./det-geometry.html">← 行列式的几何意义</a></span>
+      <span><a href="./matrix-inverse.html">矩阵运算与逆矩阵 →</a></span>
+    </div>
+
+    <div class="footer">考研知识图谱 · 数学 · 线性代数 · 行列式的性质与计算</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function')
+        renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>

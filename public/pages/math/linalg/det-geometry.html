@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>行列式的几何意义 — 考研知识图谱</title>
+  <link rel="stylesheet" href="../../../vendor/katex/katex.min.css" />
+  <script defer src="../../../vendor/katex/katex.min.js"></script>
+  <script defer src="../../../vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../css/common.css" />
+  <style>
+    .title-area .bar { background:#eab308; }
+    .aside-col .callout { border-left-color:#eab308; }
+    .aside-col .callout strong { color:#eab308; }
+    .video-wrap { margin: 18px 0 26px; border-radius: 10px; overflow: hidden;
+                  border: 1px solid rgba(255,255,255,.12); background:#000; }
+    .video-wrap video { display:block; width:100%; height:auto; }
+    .chain { display:grid; gap:10px; margin:12px 0 4px; }
+    .chain .step { border-left:3px solid rgba(255,255,255,.18); padding:6px 12px; }
+    .chain .step b { color:#eab308; }
+    .pager { display:flex; justify-content:space-between; margin:34px 0 10px; font-size:14px; }
+    .pager a { color:#9ad; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../../">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+    <div class="title-area">
+      <h1>行列式的几何意义<span class="en">Determinant as Area / Volume</span></h1>
+      <div class="bar" style="background:#eab308"></div>
+      <p class="brief">行列式不是运算技巧，而是一个「体积缩放倍数」——它回答：这个线性变换有没有把空间压扁。</p>
+    </div>
+
+    <div class="layout">
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#video">🎬 视频</a>
+        <a href="#chain">🔗 因果链</a>
+        <a href="#points">📌 要点</a>
+        <a href="#check">✅ 自检</a>
+      </nav>
+
+      <main class="main-col">
+        <section id="video">
+          <h2>🎬 本节视频（第 1 章 行列式）</h2>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline src="../../../videos/linalg/001_det-geometry.mp4"></video>
+          </div>
+        </section>
+
+        <section id="chain">
+          <h2>🔗 因果链（为什么必须有它）</h2>
+          <div class="chain">
+            <div class="step"><b>问题</b>：要判断一个方阵对应的变换「是否可逆」，需要一个能从矩阵算出来的数作判据</div>
+            <div class="step"><b>方案</b>：用列向量张成的平行六面体体积（带符号）来定义；绝对值是体积，符号表示朝向是否翻转</div>
+            <div class="step"><b>新问题</b>：几何定义算不出 4 阶以上（体积有多少个面），必须换成代数性质与降阶公式</div>
+          </div>
+        </section>
+
+        <section id="points">
+          <h2>📌 要点</h2>
+          <ul>
+            <li>2 阶行列式绝对值 = 列向量张成的平行四边形面积；3 阶 = 平行六面体体积</li>
+            <li>符号 = 朝向：交换两行 ⟺ 交换两个边向量 ⟺ 体积变号，但面积不变</li>
+            <li>某行乘 $k$ ⟹ 行列式乘 $k$（一条边伸长 k 倍，体积按比例变）</li>
+            <li>$|A| = 0$ ⟺ 图形退化（压成线/面）⟺ 列向量线性相关 ⟺ 不可逆</li>
+          </ul>
+        </section>
+
+        <section id="check">
+          <h2>✅ 自检三问（答不出就别往下走）</h2>
+          <ol>
+            <li>单位正方形被 $\begin{bmatrix}2&1\\0&3\end{bmatrix}$ 映射成什么图形？面积是多少？</li>
+            <li>为什么 $|A|=0$ 时一定不可逆？（用「压扁」解释，不许说「公式」）</li>
+            <li>交换两行后，面积和面积的方向分别怎么样了？</li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+        <div class="callout">
+          <strong>💡 一句话</strong>
+          行列式不是运算技巧，而是一个「体积缩放倍数」——它回答：这个线性变换有没有把空间压扁。
+        </div>
+        <div class="callout warn">
+          <strong>⚠️ 易错</strong>
+          几何定义算不出 4 阶以上（体积有多少个面），必须换成代数性质与降阶公式
+        </div>
+      </aside>
+    </div>
+
+    <div class="pager">
+      <span></span>
+      <span><a href="./det-calc.html">行列式的性质与计算 →</a></span>
+    </div>
+
+    <div class="footer">考研知识图谱 · 数学 · 线性代数 · 行列式的几何意义</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function')
+        renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>

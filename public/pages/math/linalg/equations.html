@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>解的存在性与解的结构 — 考研知识图谱</title>
+  <link rel="stylesheet" href="../../../vendor/katex/katex.min.css" />
+  <script defer src="../../../vendor/katex/katex.min.js"></script>
+  <script defer src="../../../vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../css/common.css" />
+  <style>
+    .title-area .bar { background:#eab308; }
+    .aside-col .callout { border-left-color:#eab308; }
+    .aside-col .callout strong { color:#eab308; }
+    .video-wrap { margin: 18px 0 26px; border-radius: 10px; overflow: hidden;
+                  border: 1px solid rgba(255,255,255,.12); background:#000; }
+    .video-wrap video { display:block; width:100%; height:auto; }
+    .chain { display:grid; gap:10px; margin:12px 0 4px; }
+    .chain .step { border-left:3px solid rgba(255,255,255,.18); padding:6px 12px; }
+    .chain .step b { color:#eab308; }
+    .pager { display:flex; justify-content:space-between; margin:34px 0 10px; font-size:14px; }
+    .pager a { color:#9ad; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../../">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+    <div class="title-area">
+      <h1>解的存在性与解的结构<span class="en">Linear Systems</span></h1>
+      <div class="bar" style="background:#eab308"></div>
+      <p class="brief">三种情形（无解/唯一/无穷多）只看两个秩；无穷多解的样子由「基础解系」决定。</p>
+    </div>
+
+    <div class="layout">
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#video">🎬 视频</a>
+        <a href="#chain">🔗 因果链</a>
+        <a href="#points">📌 要点</a>
+        <a href="#check">✅ 自检</a>
+      </nav>
+
+      <main class="main-col">
+        <section id="video">
+          <h2>🎬 本节视频（第 4 章 线性方程组）</h2>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline src="../../../videos/linalg/006_equations.mp4"></video>
+          </div>
+        </section>
+
+        <section id="chain">
+          <h2>🔗 因果链（为什么必须有它）</h2>
+          <div class="chain">
+            <div class="step"><b>问题</b>：需要一个统一的判据区分「无解、唯一解、无穷多解」，并描述无穷多解</div>
+            <div class="step"><b>方案</b>：比较 $r(A)$ 与 $r(A,b)$ 及未知数个数 $n$；齐次组求基础解系；非齐次 = 特解 + 齐次通解</div>
+            <div class="step"><b>新问题</b>：结构清楚但计算易错：自由变量个数 $n-r$、基础解系的取法、特解的选择</div>
+          </div>
+        </section>
+
+        <section id="points">
+          <h2>📌 要点</h2>
+          <ul>
+            <li>$r(A)\ne r(A,b)$ 无解；$=n$ 唯一解；$=r<n$ 无穷多解（自由变量 $n-r$ 个）</li>
+            <li>齐次组解空间维数 $=n-r$，基础解系就是它的基</li>
+            <li>非齐次通解 = 特解 $\eta_0$ + 齐次通解；任意两个特解之差是齐次解</li>
+            <li>求基础解系：化行最简形 → 自由变量轮流取 $1$、其余取 $0$</li>
+            <li>齐次组：$|A|\ne 0$ 只有零解；有非零解 $\iff |A|=0$</li>
+          </ul>
+        </section>
+
+        <section id="check">
+          <h2>✅ 自检三问（答不出就别往下走）</h2>
+          <ol>
+            <li>为什么「两个特解之差」一定是齐次组的解？</li>
+            <li>自由变量为什么恰好是 $n-r$ 个？</li>
+            <li>基础解系里的向量为什么必须线性无关？</li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+        <div class="callout">
+          <strong>💡 一句话</strong>
+          三种情形（无解/唯一/无穷多）只看两个秩；无穷多解的样子由「基础解系」决定。
+        </div>
+        <div class="callout warn">
+          <strong>⚠️ 易错</strong>
+          结构清楚但计算易错：自由变量个数 $n-r$、基础解系的取法、特解的选择
+        </div>
+      </aside>
+    </div>
+
+    <div class="pager">
+      <span><a href="./dependence.html">← 线性相关与极大无关组</a></span>
+      <span><a href="./eigen.html">特征值与相似对角化 →</a></span>
+    </div>
+
+    <div class="footer">考研知识图谱 · 数学 · 线性代数 · 解的存在性与解的结构</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function')
+        renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>

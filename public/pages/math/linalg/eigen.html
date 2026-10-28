@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特征值与相似对角化 — 考研知识图谱</title>
+  <link rel="stylesheet" href="../../../vendor/katex/katex.min.css" />
+  <script defer src="../../../vendor/katex/katex.min.js"></script>
+  <script defer src="../../../vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../css/common.css" />
+  <style>
+    .title-area .bar { background:#eab308; }
+    .aside-col .callout { border-left-color:#eab308; }
+    .aside-col .callout strong { color:#eab308; }
+    .video-wrap { margin: 18px 0 26px; border-radius: 10px; overflow: hidden;
+                  border: 1px solid rgba(255,255,255,.12); background:#000; }
+    .video-wrap video { display:block; width:100%; height:auto; }
+    .chain { display:grid; gap:10px; margin:12px 0 4px; }
+    .chain .step { border-left:3px solid rgba(255,255,255,.18); padding:6px 12px; }
+    .chain .step b { color:#eab308; }
+    .pager { display:flex; justify-content:space-between; margin:34px 0 10px; font-size:14px; }
+    .pager a { color:#9ad; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../../">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+    <div class="title-area">
+      <h1>特征值与相似对角化<span class="en">Eigenvalues & Diagonalization</span></h1>
+      <div class="bar" style="background:#eab308"></div>
+      <p class="brief">特征方向是「变换不转向」的方向；沿这些方向，矩阵退化成一次数乘。</p>
+    </div>
+
+    <div class="layout">
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#video">🎬 视频</a>
+        <a href="#chain">🔗 因果链</a>
+        <a href="#points">📌 要点</a>
+        <a href="#check">✅ 自检</a>
+      </nav>
+
+      <main class="main-col">
+        <section id="video">
+          <h2>🎬 本节视频（第 5 章 特征值）</h2>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline src="../../../videos/linalg/007_eigen.mp4"></video>
+          </div>
+        </section>
+
+        <section id="chain">
+          <h2>🔗 因果链（为什么必须有它）</h2>
+          <div class="chain">
+            <div class="step"><b>问题</b>：矩阵幂、矩阵函数难算；希望能找一个坐标系，让变换只有伸缩没有旋转</div>
+            <div class="step"><b>方案</b>：$Ax=\lambda x$；$|\lambda E-A|=0$ 求 $\lambda$，$(\lambda E-A)x=0$ 求向量；$P^{-1}AP=\Lambda$</div>
+            <div class="step"><b>新问题</b>：不是所有矩阵都能对角化（几何重数 < 代数重数时不行）；重根内部还要施密特正交化</div>
+          </div>
+        </section>
+
+        <section id="points">
+          <h2>📌 要点</h2>
+          <ul>
+            <li>$|A|=\prod\lambda_i$，$\mathrm{tr}(A)=\sum\lambda_i$</li>
+            <li>不同特征值对应的特征向量必线性无关</li>
+            <li>可对角化 $\iff$ 有 $n$ 个线性无关的特征向量 $\iff$ 每个 $\lambda$ 的几何重数 = 代数重数</li>
+            <li>实对称矩阵：特征值全实、不同 $\lambda$ 的特征向量正交、必可正交对角化</li>
+            <li>易错：同重根内部不天然正交，必须自己做施密特</li>
+          </ul>
+        </section>
+
+        <section id="check">
+          <h2>✅ 自检三问（答不出就别往下走）</h2>
+          <ol>
+            <li>为什么特征向量必须「非零」？零向量会出什么问题？</li>
+            <li>$A$ 有 3 个不同特征值（3 阶），能否断定可对角化？为什么？</li>
+            <li>已知 $|A|=6$、$\mathrm{tr}(A)=6$，特征值是 $1,2,3$ 吗？还缺什么信息？</li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+        <div class="callout">
+          <strong>💡 一句话</strong>
+          特征方向是「变换不转向」的方向；沿这些方向，矩阵退化成一次数乘。
+        </div>
+        <div class="callout warn">
+          <strong>⚠️ 易错</strong>
+          不是所有矩阵都能对角化（几何重数 < 代数重数时不行）；重根内部还要施密特正交化
+        </div>
+      </aside>
+    </div>
+
+    <div class="pager">
+      <span><a href="./equations.html">← 解的存在性与解的结构</a></span>
+      <span><a href="./quadratic.html">二次型、标准形与正定性 →</a></span>
+    </div>
+
+    <div class="footer">考研知识图谱 · 数学 · 线性代数 · 特征值与相似对角化</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function')
+        renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>

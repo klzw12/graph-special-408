@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>二次型、标准形与正定性 — 考研知识图谱</title>
+  <link rel="stylesheet" href="../../../vendor/katex/katex.min.css" />
+  <script defer src="../../../vendor/katex/katex.min.js"></script>
+  <script defer src="../../../vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../css/common.css" />
+  <style>
+    .title-area .bar { background:#eab308; }
+    .aside-col .callout { border-left-color:#eab308; }
+    .aside-col .callout strong { color:#eab308; }
+    .video-wrap { margin: 18px 0 26px; border-radius: 10px; overflow: hidden;
+                  border: 1px solid rgba(255,255,255,.12); background:#000; }
+    .video-wrap video { display:block; width:100%; height:auto; }
+    .chain { display:grid; gap:10px; margin:12px 0 4px; }
+    .chain .step { border-left:3px solid rgba(255,255,255,.18); padding:6px 12px; }
+    .chain .step b { color:#eab308; }
+    .pager { display:flex; justify-content:space-between; margin:34px 0 10px; font-size:14px; }
+    .pager a { color:#9ad; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../../">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+    <div class="title-area">
+      <h1>二次型、标准形与正定性<span class="en">Quadratic Forms</span></h1>
+      <div class="bar" style="background:#eab308"></div>
+      <p class="brief">二次型就是「对称矩阵 + 一个坐标系」：换个正交坐标，交叉项消失，形状一眼可见。</p>
+    </div>
+
+    <div class="layout">
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#video">🎬 视频</a>
+        <a href="#chain">🔗 因果链</a>
+        <a href="#points">📌 要点</a>
+        <a href="#check">✅ 自检</a>
+      </nav>
+
+      <main class="main-col">
+        <section id="video">
+          <h2>🎬 本节视频（第 6 章 二次型）</h2>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline src="../../../videos/linalg/008_quadratic.mp4"></video>
+          </div>
+        </section>
+
+        <section id="chain">
+          <h2>🔗 因果链（为什么必须有它）</h2>
+          <div class="chain">
+            <div class="step"><b>问题</b>：二次齐次多项式带交叉项，几何形状看不出来，也判断不了正负</div>
+            <div class="step"><b>方案</b>：写成 $x^{\mathsf T}Ax$（$A$ 对称）；正交变换 $x=Qy$ 消交叉项，系数就是特征值</div>
+            <div class="step"><b>新问题</b>：正交变换要求特征向量正交，只有实对称矩阵保证；一般矩阵只能配方法/合同变换</div>
+          </div>
+        </section>
+
+        <section id="points">
+          <h2>📌 要点</h2>
+          <ul>
+            <li>交叉项系数要**均分**到对称的两个位置（$2bxy \to b$ 与 $b$）</li>
+            <li>标准形系数 = 特征值；惯性定理：正负平方项个数 $(p,q)$ 唯一</li>
+            <li>$p$ = 正特征值个数（正惯性指数），与用什么变换无关</li>
+            <li>正定三判据：特征值全正 / **各阶**顺序主子式全正 / 存在可逆 $C$ 使 $A=C^{\mathsf T}C$</li>
+            <li>等价保秩、相似保特征值、合同保惯性（正定性）</li>
+          </ul>
+        </section>
+
+        <section id="check">
+          <h2>✅ 自检三问（答不出就别往下走）</h2>
+          <ol>
+            <li>为什么正定要求「各阶」顺序主子式全正，只验二阶够不够？举例。</li>
+            <li>合同变换保持什么？相似变换保持什么？两者为什么不同？</li>
+            <li>二次型 $f=2x_1x_2$ 的矩阵是什么？它的正负惯性指数各是多少？</li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+        <div class="callout">
+          <strong>💡 一句话</strong>
+          二次型就是「对称矩阵 + 一个坐标系」：换个正交坐标，交叉项消失，形状一眼可见。
+        </div>
+        <div class="callout warn">
+          <strong>⚠️ 易错</strong>
+          正交变换要求特征向量正交，只有实对称矩阵保证；一般矩阵只能配方法/合同变换
+        </div>
+      </aside>
+    </div>
+
+    <div class="pager">
+      <span><a href="./eigen.html">← 特征值与相似对角化</a></span>
+      <span><a href="./orthogonal.html">内积与施密特正交化 →</a></span>
+    </div>
+
+    <div class="footer">考研知识图谱 · 数学 · 线性代数 · 二次型、标准形与正定性</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function')
+        renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>

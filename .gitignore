@@ -10,3 +10,5 @@ Thumbs.db
 note.txt
 
 .local/
+
+.npm-cache/

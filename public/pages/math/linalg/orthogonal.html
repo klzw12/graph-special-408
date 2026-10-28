@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>内积与施密特正交化 — 考研知识图谱</title>
+  <link rel="stylesheet" href="../../../vendor/katex/katex.min.css" />
+  <script defer src="../../../vendor/katex/katex.min.js"></script>
+  <script defer src="../../../vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../../../css/common.css" />
+  <style>
+    .title-area .bar { background:#eab308; }
+    .aside-col .callout { border-left-color:#eab308; }
+    .aside-col .callout strong { color:#eab308; }
+    .video-wrap { margin: 18px 0 26px; border-radius: 10px; overflow: hidden;
+                  border: 1px solid rgba(255,255,255,.12); background:#000; }
+    .video-wrap video { display:block; width:100%; height:auto; }
+    .chain { display:grid; gap:10px; margin:12px 0 4px; }
+    .chain .step { border-left:3px solid rgba(255,255,255,.18); padding:6px 12px; }
+    .chain .step b { color:#eab308; }
+    .pager { display:flex; justify-content:space-between; margin:34px 0 10px; font-size:14px; }
+    .pager a { color:#9ad; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../../">← 🕸️ 返回图谱</a>
+
+  <div class="page">
+    <div class="title-area">
+      <h1>内积与施密特正交化<span class="en">Inner Product & Gram–Schmidt</span></h1>
+      <div class="bar" style="background:#eab308"></div>
+      <p class="brief">内积给向量带来「长度和夹角」；施密特把一组无关向量摆正，正交矩阵让求逆变成转置。</p>
+    </div>
+
+    <div class="layout">
+      <nav class="nav-col">
+        <div class="nav-title">目录</div>
+        <a href="#video">🎬 视频</a>
+        <a href="#chain">🔗 因果链</a>
+        <a href="#points">📌 要点</a>
+        <a href="#check">✅ 自检</a>
+      </nav>
+
+      <main class="main-col">
+        <section id="video">
+          <h2>🎬 本节视频（第 3 章 向量组）</h2>
+          <div class="video-wrap">
+            <video controls preload="metadata" playsinline src="../../../videos/linalg/009_orthogonal.mp4"></video>
+          </div>
+        </section>
+
+        <section id="chain">
+          <h2>🔗 因果链（为什么必须有它）</h2>
+          <div class="chain">
+            <div class="step"><b>问题</b>：只有线性无关还不够，需要一组「互相垂直」的基，才能让坐标计算变简单</div>
+            <div class="step"><b>方案</b>：内积 → 模长 → 正交；施密特逐次减去在已有方向上的投影；单位化得标准正交组</div>
+            <div class="step"><b>新问题</b>：施密特手算繁琐且对舍入敏感；正交矩阵的判定（$A^{\mathsf T}A=E$）与构造是考点</div>
+          </div>
+        </section>
+
+        <section id="points">
+          <h2>📌 要点</h2>
+          <ul>
+            <li>内积三性质：对称、线性、正定；$\|\alpha\|=\sqrt{(\alpha,\alpha)}$</li>
+            <li>$\alpha\perp\beta \iff (\alpha,\beta)=0$；非零正交组必线性无关</li>
+            <li>$\beta_k=\alpha_k-\sum_{i<k}\frac{(\alpha_k,\beta_i)}{(\beta_i,\beta_i)}\beta_i$</li>
+            <li>正交化不改变张成的空间；单位化后得标准正交组</li>
+            <li>正交矩阵：$A^{\mathsf T}A=AA^{\mathsf T}=E$，$A^{-1}=A^{\mathsf T}$，$|A|=\pm 1$</li>
+          </ul>
+        </section>
+
+        <section id="check">
+          <h2>✅ 自检三问（答不出就别往下走）</h2>
+          <ol>
+            <li>为什么「非零 + 两两正交」就能推出「线性无关」？</li>
+            <li>施密特过程里为什么要除以 $(\beta_i,\beta_i)$ 而不是 $\|\beta_i\|$？</li>
+            <li>正交矩阵的行列式为什么只能是 $\pm 1$？</li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="aside-col">
+        <div class="aside-title">着重注意</div>
+        <div class="callout">
+          <strong>💡 一句话</strong>
+          内积给向量带来「长度和夹角」；施密特把一组无关向量摆正，正交矩阵让求逆变成转置。
+        </div>
+        <div class="callout warn">
+          <strong>⚠️ 易错</strong>
+          施密特手算繁琐且对舍入敏感；正交矩阵的判定（$A^{\mathsf T}A=E$）与构造是考点
+        </div>
+      </aside>
+    </div>
+
+    <div class="pager">
+      <span><a href="./quadratic.html">← 二次型、标准形与正定性</a></span>
+      <span></span>
+    </div>
+
+    <div class="footer">考研知识图谱 · 数学 · 线性代数 · 内积与施密特正交化</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function')
+        renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});
+    });
+  </script>
+</body>
+</html>
