@@ -176,7 +176,9 @@ relations: [
 |---|---|
 | [方案验收清单.md](方案验收清单.md) | 逐条设计裁决记录（A/B/C 组） |
 | [PITFALLS.md](PITFALLS.md) | 3D 渲染层踩坑笔记（**注意**：其中「章节节点不进图」一条服务于跨域联想图，本项目**不采用**） |
-| [tools/video-review.ps1](tools/video-review.ps1) | 教学视频审阅：按场景切换抽帧 + 拼图 + 源码对照 |
+| [tools/video_review.py](tools/video_review.py) | 教学视频审阅（单文件）：切屏抽帧 + 拼图 + AST 旁白对照，支持批量 |
+| [tools/gen-linalg-pages.mjs](tools/gen-linalg-pages.mjs) | 线代 9 个「视频 + 讲义」页生成器 |
+| [docs/revisions-linalg.md](docs/revisions-linalg.md) | 线代视频三批次修订台账 |
 
 > 与本图无关的东西（例如会话文件排障、压缩格式先导课）留在本地 `.local/`，**不入库**。
 
