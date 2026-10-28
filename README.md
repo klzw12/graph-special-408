@@ -174,12 +174,11 @@ relations: [
 
 | 路径 | 内容 |
 |---|---|
-| [docs/课程/先导课.md](docs/课程/先导课.md) | 压缩 / 校验和 / 字节字符 / 帧 —— 每节一个可跑实验 |
-| [tools/SESSION-FORENSICS.md](tools/SESSION-FORENSICS.md) | 会话或工作区数据「消失」时的四步排查清单 |
 | [方案验收清单.md](方案验收清单.md) | 逐条设计裁决记录（A/B/C 组） |
 | [PITFALLS.md](PITFALLS.md) | 3D 渲染层踩坑笔记（**注意**：其中「章节节点不进图」一条服务于跨域联想图，本项目**不采用**） |
-| `tools/lesson-0X-*.mjs` | 先导课的可运行实验 |
-| `tools/frame-inspect.mjs` | zstd 会话文件的帧结构体检 |
+| [tools/video-review.ps1](tools/video-review.ps1) | 教学视频审阅：按场景切换抽帧 + 拼图 + 源码对照 |
+
+> 与本图无关的东西（例如会话文件排障、压缩格式先导课）留在本地 `.local/`，**不入库**。
 
 ### 部署
 
